@@ -1,4 +1,6 @@
 function FindProxyForURL(url, host)
 { 
-     return "SOCKS 192.168.1.101:8088";
+	if (isInNet(host, "192.168.1.0", "255.255.255.0"))  
+	        return "DIRECT";
+	return "SOCKS 192.168.1.101:8088";
 }
